@@ -11,47 +11,12 @@
 		</script>
 		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
 				<script>
-			    sap.ui.localResources("training");
+			    sap.ui.localResources("view");
+			    sap.ui.localResources("controller");
 				var app = new sap.m.App({initialPage:"idApp1"});
-				var page = sap.ui.view({id:"idApp1", viewName:"training.App", type:sap.ui.core.mvc.ViewType.JS});
+				var page = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.JS});
 				app.addPage(page);
 				app.placeAt("content");
-				
-				function onButtonPressed( ) { alert( "Bitte nicht drücken");
-												 };
-				
-				
-				function onSliderChanged( oEvent ) { alert( "Du hast den " +
-												        oEvent.getSource().getId() +
-														" auf " +
-														oEvent.getSource().getValue() +
-														" gestellt."
-														);
-												 };								
-	         var oSlider1 = new sap.m.Slider( "Slider1", {
-												change: function() {
-																	alert( "Der Slider steht auf:" + oSlider1.getValue()); }
-												});
-		//	oSlider1.setTooltip( "Slider 1" );								   
-			 oSlider1.placeAt("content");
-			 							
-	         var oSlider2 = new sap.m.Slider( "Slider2", {
-												change: onSliderChanged
-												}
-												);						   
-			 oSlider2.placeAt("content");
-			 
-			 var oText1 = new sap.m.Text({ text: "Dieses ist falsch"
-										}
-										);
-			 oText1.placeAt("content"); 
-			 var oButton = new sap.m.Button( {
-			                                   tooltip: "Dies ist kein Knopf sondern ein Button",
-											   text: "Knopf",
-											   press: onButtonPressed
-											   }
-											   );
-             oButton.placeAt("content"); 
 											   
 		</script>
 

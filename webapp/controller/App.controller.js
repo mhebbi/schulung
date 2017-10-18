@@ -34,5 +34,17 @@ sap.ui.controller("controller.App", {
 //	onExit: function() {
 //
 //	}
+				
+onButtonPressed: function ( ) { alert( "Bitte nicht drücken");
+												 },
+				
+ onSliderChanged: function( oEvent ) { 
+ 	    			alert( "Du hast den " +
+					oEvent.getSource().getId() +
+					" auf " +
+					oEvent.getSource().getValue() +
+					" gestellt."
+					);
+				}							
 
 });

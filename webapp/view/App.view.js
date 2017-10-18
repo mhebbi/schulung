@@ -13,10 +13,35 @@ sap.ui.jsview("view.App", {
 	* @memberOf view.App
 	*/ 
 	createContent : function(oController) {
+		var oSlider1 = new sap.m.Slider( "Slider1", {
+						    change: function() {
+							alert( "Der Slider steht auf:" + oSlider1.getValue()); }
+							});
+			 							
+	    var oSlider2 = new sap.m.Slider( "Slider2", {
+												change: oController.onSliderChanged
+												}
+												);	
+			 
+			 var oText1 = new sap.m.Text({ text: "Dieses ist falsch"
+										}
+										);
+			
+			 var oButton = new sap.m.Button( {
+			                                   tooltip: "Dies ist kein Knopf sondern ein Button",
+											   text: "Knopf",
+											   press: oController.onButtonPressed
+											   }
+											   );
+		
+		
  		return new sap.m.Page({
 			title: "Title",
-			content: [
-			
+			content: [ 
+				oSlider1, 
+				oSlider2,
+				oText1,
+				oButton
 			]
 		});
 	}
