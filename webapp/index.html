@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_belize">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+	
+		
+				<script>
+				
+				function onButtonPressed( ) { alert( "Bitte nicht drücken");
+												 };
+				
+				
+				function onSliderChanged( oEvent ) { alert( "Du hast den " +
+												        oEvent.getSource().getId() +
+														" auf " +
+														oEvent.getSource().getValue() +
+														" gestellt."
+														);
+												 };								
+	         var oSlider1 = new sap.m.Slider( "Slider1", {
+												change: function() {
+																	alert( "Der Slider steht auf:" + oSlider1.getValue()); }
+												});
+		//	oSlider1.setTooltip( "Slider 1" );								   
+			 oSlider1.placeAt("content");
+			 							
+	         var oSlider2 = new sap.m.Slider( "Slider2", {
+												change: onSliderChanged
+												}
+												);						   
+			 oSlider2.placeAt("content");
+			 
+			 var oText1 = new sap.m.Text({ text: "Dieses ist falsch"
+										}
+										);
+			 oText1.placeAt("content"); 
+			 var oButton = new sap.m.Button( {
+			                                   tooltip: "Dies ist kein Knopf sondern ein Button",
+											   text: "Knopf",
+											   press: onButtonPressed
+											   }
+											   );
+             oButton.placeAt("content"); 
+											   
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+<div id="content"></div>
+	</body>
+</html>
