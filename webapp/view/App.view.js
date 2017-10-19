@@ -18,7 +18,7 @@ sap.ui.jsview("view.App", {
 			change: function() {
 				alert("Der Slider steht auf:" + oSlider1.getValue());
 			}
-		
+
 		});
 		var oText1 = new sap.m.Text({
 			text: "{path: 'dataModel>/value1'}"
@@ -38,12 +38,10 @@ sap.ui.jsview("view.App", {
 			text: "Knopf",
 			press: oController.onButtonPressed
 		});
-		
-		var oVLayout = new sap.m.VBox({
-		//	alignItems: "Center",
-/*			justifyContent: sap.m.FlexJustifyContent.SpaceAround,
-			alignItems: sap.m.FlexAlignItems.Center,*/
-			items: [
+
+		var oPage = new sap.m.Page({
+			title: "Title",
+			content: [
 				oSlider1,
 				oText1,
 				oSlider2,
@@ -51,12 +49,10 @@ sap.ui.jsview("view.App", {
 				oButton
 			]
 		});
-
-		return new sap.m.Page({
-			title: "Title",
-			content:[
-				 oVLayout
-				]
+		return new sap.m.App({
+			pages: [
+				oPage
+			]
 		});
 	}
 
