@@ -1,4 +1,4 @@
-sap.ui.controller("controller.App", {
+sap.ui.controller("de.integrata.training.controller.App", {
 
 	/**
 	 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -6,13 +6,7 @@ sap.ui.controller("controller.App", {
 	 * @memberOf controller.App
 	 */
 	onInit: function() {
-		var oData = {
-			value1: 50,
-			value2: 75
-		};
-
-		var oModel = new sap.ui.model.json.JSONModel(oData);
-		sap.ui.getCore().setModel(oModel, "dataModel");
+	
 	},
 	/**
 	 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

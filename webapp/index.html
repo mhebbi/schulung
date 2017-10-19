@@ -8,19 +8,28 @@
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m"
 				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{"de.integrata.training": "./"}'
 				data-sap-ui-theme="sap_belize">
 		</script>
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
 		<script>
-			    sap.ui.localResources("view");
-			    sap.ui.localResources("controller");
-				var oApp = sap.ui.view({id:"idApp1", viewName:"view.App", type:sap.ui.core.mvc.ViewType.XML});
-				oApp.placeAt("content");	
-											   
+				sap.ui.getCore().attachInit(function () {
+					sap.ui.require([
+						"sap/m/Shell",
+						"sap/ui/core/ComponentContainer"
+					], function (Shell, ComponentContainer) {
+						new Shell({
+							app: new ComponentContainer({
+								height : "100%",
+								name : "de.integrata.training"
+							})
+						}).placeAt("content");
+				});
+			});	
 		</script>
 
 	</head>
 	<body class="sapUiBody" role="application">
-<div id="content"></div>
+		<div id="content"></div>
 	</body>
 </html>

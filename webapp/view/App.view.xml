@@ -1,18 +1,19 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="controller.App" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="de.integrata.training.controller.App" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="Title">
+			<Page title="{i18n>AppTitle}">
 				<content>
 					<sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="__layout0">
-					    <sap.ui.layout:content>
-					        <Slider xmlns="sap.m" id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>
-					        <Text xmlns="sap.m" text="{path: 'dataModel>/value1'}"/>
-					        <Slider xmlns="sap.m" id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
-					        <Text xmlns="sap.m" text="{dataModel>/value2}"/>
-					        <Text xmlns="sap.m" text="Die ekigen Klammern werden nicht getagt > ? "/>
-					    </sap.ui.layout:content>
+						<sap.ui.layout:content>
+							<Slider xmlns="sap.m" id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>
+							<Text xmlns="sap.m" text="{path: 'dataModel>/value1'}"/>
+							<Slider xmlns="sap.m" id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
+							<Text xmlns="sap.m" text="{dataModel>/value2}"/>
+							<Text xmlns="sap.m" text="{i18n>TextInfo}"/>
+						</sap.ui.layout:content>
 					</sap.ui.layout:VerticalLayout>
-				    <Button text="Zweiter Knopf" press="onButtonPressed"/><Button text="Knopf" tooltip="Hallo Welt"/>
+					<Button text="{i18n>Button2Text}f" press="onButtonPressed"/>
+					<Button text="{i18n>Button1Text}" tooltip="{i18n>ButtonTooltip}"/>
 				</content>
 			</Page>
 		</pages>
