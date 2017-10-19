@@ -25,9 +25,23 @@ sap.ui.define([
 			var oModel = new sap.ui.model.json.JSONModel(oData);
 			this.setModel(oModel, "dataModel");
 			// sap.ui.getCore().setModel(oModel, "dataModel");
-			
-			var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+
+			// var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+			// this.setModel(oFlugkundenModel, "dataFlugkunden");
+
+			 var oFlugkundenModel = new sap.ui.model.odata.v2.ODataModel(
+			  	"/sap/opu/odata/sap/ZGW_FLUGKUNDE_003_SRV",
+			  	{
+			  		disableHeadRequestForToken: true,
+			  		useBatch: false
+			  		
+			  	});	
+			// 	"http://train18.sap.integrata.net:8000/sap/opu/odata/sap/ZGW_FLUGKUNDE_003_SRV", {
+			// 		user: "schul03",
+			// 		password: "zun42der"
+			// 	});
 			this.setModel(oFlugkundenModel, "dataFlugkunden");
+
 			UIComponent.prototype.init.apply(this, arguments);
 
 			var i18nModel = new sap.ui.model.resource.ResourceModel({

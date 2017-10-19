@@ -14,7 +14,17 @@
 						<!--</sap.ui.layout:VerticalLayout>-->
 						<!--<Button text="{i18n>Button2Text}f" press="onButtonPressed"/>-->
 						<!--<ButtTableTitelon text="{i18n>Button1Text}" tooltip="{i18n>ButtonTooltip}"/>-->
-						<List headerText="{i18n>TableTitel}" items="{model: 'dataFlugkunden', path: '/d/results' }">
+						<List headerText="{i18n>TableTitel}" 
+						      growing="true"
+						      growingScrollToLoad="true"
+						      growingThreshold="33"
+							  items="{
+							  model: 'dataFlugkunden', 
+							  path: '/FlugkundenSet',
+							  sorter: {
+								path: 'Custname',
+								decending: false
+							  }}">
 							<StandardListItem 
 							   title="{dataFlugkunden>Custname}"
 							   description="{dataFlugkunden>Email}, {dataFlugkunden>Phone}"
