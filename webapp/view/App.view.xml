@@ -3,19 +3,25 @@
 		<pages>
 			<Page title="{i18n>AppTitle}">
 				<content>
-					<sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="__layout0">
-						<sap.ui.layout:content>
-							<Slider xmlns="sap.m" id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>
-							<Text xmlns="sap.m" text="{path: 'dataModel>/value1'}"/>
-							<Slider xmlns="sap.m" id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>
-							<Text xmlns="sap.m" text="{dataModel>/value2}"/>
-							<Text xmlns="sap.m" text="{i18n>TextInfo}"/>
-						</sap.ui.layout:content>
-					</sap.ui.layout:VerticalLayout>
-					<Button text="{i18n>Button2Text}f" press="onButtonPressed"/>
-					<Button text="{i18n>Button1Text}" tooltip="{i18n>ButtonTooltip}"/>
-				</content>
-			</Page>
-		</pages>
-	</App>
-</mvc:View>
+					<!--<sap.ui.layout:VerticalLayout width="100%" xmlns:sap.ui.layout="sap.ui.layout" id="__layout0">-->
+						<!--	<sap.ui.layout:content>-->
+						<!--		<Slider xmlns="sap.m" id="Slider1" value="{dataModel>/value1}" change="onSliderChange"/>-->
+						<!--		<Text xmlns="sap.m" text="{path: 'dataModel>/value1'}"/>-->
+						<!--		<Slider xmlns="sap.m" id="Slider2" value="{model: 'dataModel', path: '/value2'}" change="onSliderChange"/>-->
+						<!--		<Text xmlns="sap.m" text="{dataModel>/value2}"/>-->
+						<!--		<Text xmlns="sap.m" text="{i18n>TextInfo}"/>-->
+						<!--	</sap.ui.layout:content>-->
+						<!--</sap.ui.layout:VerticalLayout>-->
+						<!--<Button text="{i18n>Button2Text}f" press="onButtonPressed"/>-->
+						<!--<ButtTableTitelon text="{i18n>Button1Text}" tooltip="{i18n>ButtonTooltip}"/>-->
+						<List headerText="{i18n>TableTitel}" items="{model: 'dataFlugkunden', path: '/d/results' }">
+							<StandardListItem 
+							   title="{dataFlugkunden>Custname}"
+							   description="{dataFlugkunden>Email}, {dataFlugkunden>Phone}"
+							   counter="{Quantity}"/>
+						</List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</mvc:View>

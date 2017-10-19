@@ -26,6 +26,8 @@ sap.ui.define([
 			this.setModel(oModel, "dataModel");
 			// sap.ui.getCore().setModel(oModel, "dataModel");
 			
+			var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+			this.setModel(oFlugkundenModel, "dataFlugkunden");
 			UIComponent.prototype.init.apply(this, arguments);
 
 			var i18nModel = new sap.ui.model.resource.ResourceModel({
